@@ -1,0 +1,8 @@
+{
+  "namespace": "case_9df88f5a_fixed.avro",
+  "name": "Case_9df88f5a_Fixed",
+  "type": "record",
+  "fields": [
+    {"name": "bytes", "type": {"type": "array", "items": {"name": "item", "type": "fixed", "size": 1000}}}
+  ]
+}

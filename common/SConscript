@@ -1,0 +1,8 @@
+# -*- python -*-
+
+Import('env')
+
+env.Default(env.Install(
+    '$LIB_DIR',
+    env.StaticLibrary('common', env.SharedObject(env.Glob('*.cc')))))
+env.libDeps('common', [])

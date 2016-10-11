@@ -1,0 +1,8 @@
+# -*- python -*-
+
+Import('env')
+
+env.avrogencpp('case.hh', 'case.avsc')
+c = env.Program('compiled', 'compiled.cc',
+                LIBS=['common', 'avro_static'])
+env.Default(c)

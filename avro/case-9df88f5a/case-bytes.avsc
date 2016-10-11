@@ -1,0 +1,8 @@
+{
+  "namespace": "case_9df88f5a_bytes.avro",
+  "name": "Case_9df88f5a_Bytes",
+  "type": "record",
+  "fields": [
+    {"name": "bytes", "type": {"type": "array", "items": {"type": "bytes"}}}
+  ]
+}

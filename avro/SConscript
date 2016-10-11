@@ -1,0 +1,11 @@
+# -*- python -*-
+Import('env')
+
+env.subDir('avro')
+env.subDir('case-f71f37ce')
+env.subDir('case-1d6cec68')
+env.subDir('case-9df88f5a')
+env.subDir('case-7cfc53ac')
+env.subDir('case-bc64e0e8')
+env.subDir('case-67764142')
+env.subDir('case-58e1a854')

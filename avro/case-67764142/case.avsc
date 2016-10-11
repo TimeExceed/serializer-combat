@@ -1,0 +1,8 @@
+{
+  "namespace": "case_67764142.avro",
+  "name": "Case_67764142",
+  "type": "record",
+  "fields": [
+    {"name": "strs", "type": {"type": "array", "items": "string"}}
+  ]
+}

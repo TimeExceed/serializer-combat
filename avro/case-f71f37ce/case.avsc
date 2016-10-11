@@ -1,0 +1,8 @@
+{
+  "namespace": "case_f71f37ce.avro",
+  "name": "Case_f71f37ce",
+  "type": "record",
+  "fields": [
+    {"name": "ints", "type": {"type": "array", "items": "long"}}
+  ]
+}
