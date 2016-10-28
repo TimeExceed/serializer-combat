@@ -1,0 +1,20 @@
+# -*- python -*-
+
+Import('env')
+env.Header('avro', env.Dir('api'))
+
+env = env.Clone()
+env.MergeFlags({'CXXFLAGS': ['-I%s' % env.Dir('$HEADER_DIR/avro').path, '-Wno-deprecated-declarations']})
+
+cpps = env.Glob('*.cc') + env.Glob('json/*.cc') + env.Glob('parsing/*.cc')
+cpps.remove(env.File('avrogencpp.cc'))
+libavro = env.Install(
+    '$LIB_DIR',
+    env.StaticLibrary('avro_static', env.SharedObject(cpps)))
+env.libDeps('avro_static', ['boost_program_options'])
+
+gencpp = env.Program('avrogencpp', env.SharedObject('avrogencpp.cc'),
+    LIBS=['avro_static'])
+env.Depends(gencpp, ['$LIB_DIR/libavro_static.a'])
+env.Default(gencpp)
+

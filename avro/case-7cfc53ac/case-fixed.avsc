@@ -1,0 +1,8 @@
+{
+  "namespace": "case_7cfc53ac_fixed.avro",
+  "name": "Case_7cfc53ac_Fixed",
+  "type": "record",
+  "fields": [
+    {"name": "bytes", "type": {"type": "fixed", "name": "item", "size": 1048576}}
+  ]
+}

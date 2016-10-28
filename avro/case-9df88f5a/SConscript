@@ -1,0 +1,14 @@
+# -*- python -*-
+
+Import('env')
+
+env.avrogencpp('case-fixed.hh', 'case-fixed.avsc')
+c = env.Program('compiled-fixed', 'compiled-fixed.cc',
+                LIBS=['common', 'avro_static'])
+env.Default(c)
+
+env.avrogencpp('case-bytes.hh', 'case-bytes.avsc')
+c = env.Program('compiled-bytes', 'compiled-bytes.cc',
+                LIBS=['common', 'avro_static'])
+env.Default(c)
+

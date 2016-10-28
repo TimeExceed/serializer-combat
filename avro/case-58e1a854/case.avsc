@@ -1,0 +1,8 @@
+{
+  "namespace": "case_58e1a854.avro",
+  "name": "Case_58e1a854",
+  "type": "record",
+  "fields": [
+    {"name": "str", "type": "string"}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "namespace": "case_bc64e0e8.avro",
+  "name": "Case_bc64e0e8",
+  "type": "record",
+  "fields": [
+    {"name": "strs", "type": {"type": "array", "items": "string"}}
+  ]
+}
