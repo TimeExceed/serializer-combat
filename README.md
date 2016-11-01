@@ -3,66 +3,70 @@ Comparison between several serializers in C++.
 
 We have following candidates:
 * [Avro-1.8](http://avro.apache.org/docs/1.8.1/)
+* [Cap'n'Proto](https://capnproto.org/)
 * ProtoBuf-2 (under construction)
 * ProtoBuf-3 (under construction)
 * Msgpack (under construction)
 * Thrift (under construction)
 * FlatBuffers (under construction)
-* Cap'n'Proto (under construction)
 * RapidJson (under construction)
 
 ## General
 
-|                   | Avro    |
-| ---               | ----    |
-| Sponsor           | Hadoop  |
-| Format spec       | Yes     |
-| Plain-text format | JSON    |
-| Binary format     | Yes     |
-| Code generation   | Yes     |
-| Handshaking       | Yes     |
-| Dynamic typing    | Yes     |
-| Message framing   | Yes     |
+|                   | Avro    | Cap'n'Proto  |
+| ---               | ----    | -----------  |
+| Sponsor           | Hadoop  | Sandstorm.io |
+| Format spec       | Yes     | Yes          |
+| Plain-text format | JSON    | No           |
+| Binary format     | Yes     | Yes          |
+| Code generation   | Yes     | Yes          |
+| Handshaking       | Yes     | No           |
+| Dynamic typing    | Yes     | No           |
+| Message framing   | Yes     | Yes          |
 
 * The purpose of the handshake is to ensure that the client and the server have each other's protocol definition, so that the client can correctly deserialize responses, and the server can correctly deserialize requests.
 * Dynamic typing means the reader does not need any predefined schema to read any valid messages.
 * Message framing means the reader and the writer does not necessarily read from/write to a single consecutive buffer.
+* The author of Cap'n'Proto was the primary author of Protocol Buffers version 2.
 
 ## Language Support
 
-|         | Avro |
-| ---     | ---- |
-| C       | Yes  |
-| C++     | 98   |
-| JAVA    | Yes  |
-| C#      | Yes  |
-| Python  | 2/3  |
-| Node.js | Yes  |
-| PHP     | No   |
-| Ruby    | Yes  |
-| Go      | No   |
+|         | Avro | Cap'n'Proto |
+| ---     | ---- | ----------- |
+| C       | Yes  | Yes         |
+| C++     | 98   | 11          |
+| JAVA    | Yes  | Yes         |
+| C#      | Yes  | Yes         |
+| Python  | 2/3  | 2           |
+| Node.js | Yes  | Yes         |
+| PHP     | Yes  | Yes         |
+| Ruby    | Yes  | Yes         |
+| Go      | Yes  | Yes         |
+
+* Go support for Avro is not official.
+* Language supports for Cap'n'Proto, except C++11, are not official.
 
 ## Data Types
 
 ### Primitive types
 
-|         | Avro          |
-| ---     | ----          |
-| Integer | 32/64         |
-| Float   | single/double |
-| String  | UTF-8         |
-| Binary  | dynamic/fixed |
+|         | Avro          | Cap'n'Proto   |
+| ---     | ----          | -----------   |
+| Integer | 32/64         | 8/16/32/64    |
+| Float   | single/double | single/double |
+| String  | UTF-8         | UTF-8         |
+| Binary  | dynamic/fixed | dynamic       |
 
 ### Complex types
 
-|                | Avro |
-| ---            | ---- |
-| Enum           | Yes  |
-| Record         | Yes  |
-| List           | Yes  |
-| Map            | Yes  |
-| Union          | Yes  |
-| Recursive type | Yes |
+|                | Avro | Cap'n'Proto |
+| ---            | ---- | ----------- |
+| Enum           | Yes  | Yes         |
+| Record         | Yes  | Yes         |
+| List           | Yes  | Yes         |
+| Map            | Yes  | No          |
+| Union          | Yes  | Yes         |
+| Recursive type | Yes  | Yes         |
 
 * Recursive type means something like trees.
 
